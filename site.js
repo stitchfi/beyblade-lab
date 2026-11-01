@@ -35,7 +35,7 @@ const PAGES = [
   const footer = document.querySelector("footer");
   if (footer && !footer.innerHTML.trim()) {
     footer.innerHTML = `🌀 陀螺實驗室・給孩子和大人一起動手做<br>
-      資料參考：<a href="https://www.takaratomyasia.com/documents/beybladex/1705650582_Beyblade%20X_Start%20Dash%20Guide.pdf" target="_blank" rel="noopener">Takara Tomy《Beyblade X Start Dash Guide》</a>・動畫和插圖為本站自製的示意圖<br>
+      資料參考：<a href="https://www.takaratomyasia.com/documents/beybladex/1705650582_Beyblade%20X_Start%20Dash%20Guide.pdf" target="_blank" rel="noopener">Takara Tomy《Beyblade X Start Dash Guide》</a>・動畫和插圖為本站自製的示意圖・照片和影片來自 Wikimedia Commons（作者與授權見各圖說明和<a href="index.html">首頁</a>）<br>
       BEYBLADE® 是 Takara Tomy 的商標，本站為個人製作的教學網站，與 Takara Tomy 無關。`;
   }
 })();
