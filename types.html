@@ -4,11 +4,48 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>陀螺類型｜陀螺實驗室</title>
-  <meta name="description" content="戰鬥陀螺的四種類型：攻擊、防禦、持久、平衡，以及它們之間的相剋關係">
+  <meta name="description" content="戰鬥陀螺的四種類型：攻擊、防禦、持久、平衡。每種類型的特色、怎麼認、怎麼玩、代表陀螺和相剋關係">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌀</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .jump { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+    .jump a { display: block; text-align: center; text-decoration: none; font-weight: 900; font-size: 20px; padding: 10px; border-radius: 16px; border: 3px solid; }
+    .jump a .emoji { display: block; font-size: 36px; line-height: 1.3; }
+    .type-sec { margin-top: 40px; scroll-margin-top: 90px; }
+    .type-head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; padding: 12px 18px; border-radius: 16px; color: #fff; }
+    .type-head h2 { margin: 0; font-size: 28px; }
+    .type-head .say { margin-left: auto; font-weight: 700; font-size: 17px; background: rgba(255, 255, 255, 0.25); padding: 2px 12px; border-radius: 999px; }
+    .bg-attack { background: var(--red); }
+    .bg-defense { background: var(--green); }
+    .bg-stamina { background: var(--purple); }
+    .bg-balance { background: var(--yellow); color: var(--ink); }
+    .type-body { display: grid; gap: 16px; grid-template-columns: minmax(260px, 340px) 1fr; margin-top: 16px; align-items: start; }
+    @media (max-width: 700px) { .type-body { grid-template-columns: 1fr; } }
+    .art { text-align: center; padding: 10px; }
+    .art svg { width: 100%; max-width: 300px; display: block; margin: 0 auto; }
+    .art p { margin: 4px 0 0; font-size: 14px; color: var(--muted); }
+    .facts { margin: 0; padding: 0; list-style: none; }
+    .facts li { padding: 8px 0 8px 36px; position: relative; border-bottom: 1px dashed var(--line); }
+    .facts li:last-child { border-bottom: 0; }
+    .facts li .i { position: absolute; left: 0; top: 8px; }
+    .meter { display: grid; grid-template-columns: 5em 1fr; gap: 4px 10px; align-items: center; font-size: 16px; font-weight: 700; margin-top: 10px; }
+    .meter .bar { height: 14px; background: #edf1f8; border-radius: 999px; overflow: hidden; }
+    .meter .bar i { display: block; height: 100%; border-radius: 999px; }
+    .pc { display: grid; gap: 12px; grid-template-columns: 1fr 1fr; margin-top: 14px; }
+    @media (max-width: 500px) { .pc { grid-template-columns: 1fr; } }
+    .pc .card { padding: 12px 16px; }
+    .pc ul { margin: 4px 0 0; padding-left: 22px; font-size: 17px; }
+    .examples { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); margin-top: 10px; }
+    .ex { padding: 12px 14px; color: var(--ink) !important; }
+    .ex .code { float: right; background: var(--blue-soft); color: var(--blue); font-weight: 900; font-size: 14px; padding: 0 8px; border-radius: 8px; }
+    .ex b { display: block; font-size: 19px; }
+    .ex .combo { font-weight: 900; color: var(--muted); font-size: 16px; }
+    .ex p { margin: 4px 0 0; font-size: 16px; }
+    .ex .mini { display: block; width: 56px; height: 56px; margin-bottom: 4px; }
+    .type-demo { max-width: 420px; }
+  </style>
 </head>
 <body data-page="types">
   <header class="top" id="top"></header>
@@ -21,34 +58,21 @@
       </div>
     </div>
 
-    <div class="section">
-      <h2><span class="n">1</span>四種類型</h2>
-      <div class="grid">
-        <div class="card t-attack" style="border-width:3px">
-          <h3>⚔️ 攻擊型</h3>
-          <p style="margin:0 0 6px">衝得快、撞得猛，用 <b>X 衝刺</b> 主動找對手。</p>
-          <p style="margin:0;font-size:16px">代表：蒼龍之劍 3-60<b>F</b><br>擅長對付：<b>持久型</b></p>
-        </div>
-        <div class="card t-defense" style="border-width:3px">
-          <h3>🛡️ 防禦型</h3>
-          <p style="margin:0 0 6px">站在中間，吸收撞擊，很難被撞走。</p>
-          <p style="margin:0;font-size:16px">代表：騎士之盾 3-80<b>N</b><br>擅長對付：<b>攻擊型</b></p>
-        </div>
-        <div class="card t-stamina" style="border-width:3px">
-          <h3>⏳ 持久型</h3>
-          <p style="margin:0 0 6px">離心力強、轉得久，比耐力。</p>
-          <p style="margin:0;font-size:16px">代表：巫師之箭 4-80<b>B</b><br>擅長對付：<b>防禦型</b></p>
-        </div>
-        <div class="card t-balance" style="border-width:3px">
-          <h3>⚖️ 平衡型</h3>
-          <p style="margin:0 0 6px">攻擊和防禦都會一點，什麼對手都能應付。</p>
-          <p style="margin:0;font-size:16px">代表：地獄鐮刀 4-60<b>T</b><br>擅長對付：各種對手都有機會</p>
-        </div>
-      </div>
+    <p class="question">🔍 陀螺是哪一種類型，<b>最主要看最下面的軸心</b>！刃的形狀和重量也會幫忙。</p>
+
+    <div class="jump">
+      <a href="#attack" class="t-attack"><span class="emoji">⚔️</span>攻擊型</a>
+      <a href="#defense" class="t-defense"><span class="emoji">🛡️</span>防禦型</a>
+      <a href="#stamina" class="t-stamina"><span class="emoji">⏳</span>持久型</a>
+      <a href="#balance" class="t-balance"><span class="emoji">⚖️</span>平衡型</a>
     </div>
 
-    <div class="section">
-      <h2><span class="n">2</span>誰剋誰？</h2>
+    <div id="types"></div>
+
+    <section class="type-sec" id="vs">
+      <div class="section">
+        <h2><span class="n">⚔️</span>誰剋誰？</h2>
+      </div>
       <div class="grid two" style="align-items:center">
         <div class="card" style="text-align:center">
           <svg viewBox="0 0 320 300" role="img" aria-label="相剋圖：攻擊型剋持久型，持久型剋防禦型，防禦型剋攻擊型，平衡型在中間">
@@ -92,22 +116,207 @@
       <div class="note">
         <b>🤔 一定會這樣嗎？</b><br>
         不一定！相剋只是「比較容易贏」。發射的力道、角度和運氣都會影響結果，所以比賽才好玩。
-        到 <a href="battle.html">🏆 戰鬥規則區</a> 看動畫，觀察不同類型對打的樣子。
+        到 <a href="battle.html">🏆 戰鬥規則區</a> 看不同類型對打的動畫。
       </div>
-    </div>
+    </section>
 
-    <div class="section">
-      <h2><span class="n">3</span>挑選小建議</h2>
+    <section class="type-sec">
+      <div class="section"><h2><span class="n">📊</span>四種類型一起比</h2></div>
+      <div class="scroll">
+        <table class="table">
+          <tr><th></th><th class="c">⚔️ 攻擊型</th><th class="c">🛡️ 防禦型</th><th class="c">⏳ 持久型</th><th class="c">⚖️ 平衡型</th></tr>
+          <tr><th>常見軸心</th><td class="c">F、R、GF</td><td class="c">N、HN</td><td class="c">B、DB、FB</td><td class="c">T、P、GP</td></tr>
+          <tr><th>在盤子裡</th><td class="c">到處衝</td><td class="c">站中間</td><td class="c">中間慢慢繞</td><td class="c">先動後穩</td></tr>
+          <tr><th>最常贏的方式</th><td class="c">出場、極限、爆裂</td><td class="c">對手撞到沒力</td><td class="c">旋轉終結</td><td class="c">都有可能</td></tr>
+          <tr><th>擅長對付</th><td class="c">持久型</td><td class="c">攻擊型</td><td class="c">防禦型</td><td class="c">都可以</td></tr>
+          <tr><th>發射建議</th><td class="c">稍微傾斜、用力</td><td class="c">拿平、放中間</td><td class="c">拿平、輕柔</td><td class="c">拿平就好</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section class="type-sec">
+      <div class="section"><h2><span class="n">🐣</span>挑選小建議</h2></div>
       <div class="grid">
         <div class="card"><h3>🐣 第一顆陀螺</h3><p style="margin:0">選<b>平衡型</b>：什麼對手都能打，比較不會一直輸。</p></div>
         <div class="card"><h3>💪 力氣比較小</h3><p style="margin:0">選<b>防禦型</b>或<b>持久型</b>：不需要很用力發射也有機會贏。</p></div>
         <div class="card"><h3>👫 兩個人一起玩</h3><p style="margin:0">一人選<b>攻擊型</b>、一人選<b>防禦型</b>，馬上感受「矛與盾」！</p></div>
       </div>
-    </div>
+      <p style="font-size:15px;color:var(--muted)">
+        代表陀螺的類型參考 Takara Tomy《Start Dash Guide》和各通路的商品標示；英文名稱和型號最準，中文翻譯各通路可能不同。
+        每顆陀螺換了零件，類型也可能跟著改變。插圖是本站畫的示意圖，不是產品外觀。
+      </p>
+    </section>
 
     <nav class="pager" id="pager"></nav>
   </main>
   <footer></footer>
   <script src="site.js"></script>
+  <script>
+    (function () {
+      const TYPES = [
+        {
+          id: "attack", emoji: "⚔️", name: "攻擊型", cls: "attack", color: "#e63946", dark: "#a61b27",
+          say: "衝啊！先撞再說！", demo: "F",
+          intro: "攻擊型就像賽車手，一發射就到處衝，利用盤邊的 <b>X 衝刺軌道</b>加速，用力撞向對手。",
+          facts: [
+            ["📍", "<b>軸心</b>：底部平平的，像 F（平底）、R（Rush）、GF（Gear Flat）。摩擦大，容易咬住 X 軌道衝刺。"],
+            ["🗡️", "<b>刃</b>：有尖尖的角或往上挑的刀刃，撞到對手時可以把它撞飛。"],
+            ["🏁", "<b>最常贏的方式</b>：把對手撞進 Over 區（2 分）或 Xtreme 區（3 分），或是撞散（2 分）。"],
+            ["🎯", "<b>發射小技巧</b>：發射器稍微傾斜一點點、用力拉，比較容易馬上衝起來。"],
+          ],
+          meter: [["攻擊", 95], ["防禦", 30], ["持久", 25]],
+          good: ["速度快、看起來最刺激", "可以一次拿 2～3 分"],
+          bad: ["力氣用完得快，容易先停", "太用力衝，自己也可能飛出場"],
+          examples: [
+            ["BX-01", "DRAN SWORD 3-60F", "蒼龍之劍", "官方入門的攻擊型代表，3 個往上挑的刀刃，擅長把對手撞飛。"],
+            ["BX-23", "PHOENIX WING 9-60GF", "鳳凰之翼", "名字是「鳳凰的翅膀」。GF 軸心衝刺很強，是很受歡迎的攻擊型。"],
+            ["BX-20", "DRAN DAGGER 4-60R", "龍之短劍", "R 是 Rush（衝刺）軸心，喜歡一直往前衝撞。"],
+          ],
+        },
+        {
+          id: "defense", emoji: "🛡️", name: "防禦型", cls: "defense", color: "#2a9d48", dark: "#1b6e31",
+          say: "我站在這裡，你撞不動我！", demo: "N",
+          intro: "防禦型就像守門員，站在盤子中間不太移動，把撞過來的對手<b>彈回去</b>，讓對手自己先沒力。",
+          facts: [
+            ["📍", "<b>軸心</b>：尖尖的，像 N（針狀）、HN（高針）。站得穩，被撞時會稍微傾斜反擊。"],
+            ["🛡️", "<b>刃</b>：形狀比較圓、有護甲，可以吸收撞擊，不容易被撞散。"],
+            ["🏁", "<b>最常贏的方式</b>：攻擊型撞不倒它、自己先停或撞飛出去。"],
+            ["🎯", "<b>發射小技巧</b>：發射器拿平，把陀螺放在盤子正中間附近。"],
+          ],
+          meter: [["攻擊", 30], ["防禦", 95], ["持久", 55]],
+          good: ["力氣小也很好用", "不容易被撞出場"],
+          bad: ["遇到持久型，比耐力會輸", "自己不太會主動得分"],
+          examples: [
+            ["BX-04", "KNIGHT SHIELD 3-80N", "騎士之盾", "官方入門的防禦型代表，6 片護甲像避震器一樣吸收撞擊。"],
+            ["BX-13", "KNIGHT LANCE 4-80HN", "騎士長槍", "騎士之盾的夥伴，HN 是比較高的針狀軸心。"],
+          ],
+        },
+        {
+          id: "stamina", emoji: "⏳", name: "持久型", cls: "stamina", color: "#8f5be8", dark: "#5c2fb0",
+          say: "慢慢來，我可以轉很久～", demo: "B",
+          intro: "持久型就像馬拉松選手，不急著打架，在盤子中間慢慢繞圈，<b>比誰轉得久</b>。",
+          facts: [
+            ["📍", "<b>軸心</b>：圓圓的球形，像 B（球形）、DB（Disk Ball）、FB（Free Ball）。移動剛剛好，可以閃開攻擊。"],
+            ["🌀", "<b>刃</b>：重量放在外圈、圓圓滑滑的，轉起來的離心力很強，比較不會慢下來。"],
+            ["🏁", "<b>最常贏的方式</b>：旋轉終結：對手先停下來，自己還在轉（1 分）。"],
+            ["🎯", "<b>發射小技巧</b>：發射器拿平，拉得順順的，讓陀螺站穩在中間。"],
+          ],
+          meter: [["攻擊", 20], ["防禦", 45], ["持久", 95]],
+          good: ["最適合做「誰轉最久」實驗", "防禦型通常比不過它"],
+          bad: ["被攻擊型猛撞容易出場", "一次只拿 1 分"],
+          examples: [
+            ["BX-03", "WIZARD ARROW 4-80B", "巫師之箭", "官方入門的持久型代表，兩個大圓刃讓離心力很強。"],
+            ["UX-03", "WIZARD ROD 5-70DB", "巫師之杖", "DB 是 Disk Ball 軸心，以轉很久出名。"],
+            ["UX-08", "SILVER WOLF 3-80FB", "銀狼", "FB 是 Free Ball 軸心，球會自己轉動，很會撐。"],
+          ],
+        },
+        {
+          id: "balance", emoji: "⚖️", name: "平衡型", cls: "balance", color: "#f4b400", dark: "#b07f00",
+          say: "攻擊、防守，我都會一點！", demo: "T",
+          intro: "平衡型就像全能選手，<b>前半場會移動攻擊、後半場慢慢穩下來</b>，什麼對手都有機會贏。",
+          facts: [
+            ["📍", "<b>軸心</b>：介於平底和尖尖之間，像 T（錐形）、P（Point）、GP（Gear Point）。"],
+            ["⚙️", "<b>刃</b>：攻擊和防禦的特色都有一點，有的特別會把對手撞散。"],
+            ["🏁", "<b>最常贏的方式</b>：都有可能，看對手是誰。"],
+            ["🎯", "<b>發射小技巧</b>：拿平發射就好，最容易上手。"],
+          ],
+          meter: [["攻擊", 60], ["防禦", 60], ["持久", 60]],
+          good: ["不挑對手，新手第一顆最推薦", "換零件可以變成別的類型"],
+          bad: ["沒有特別強的一項", "遇到很強的專門型可能比不過"],
+          examples: [
+            ["BX-02", "HELLS SCYTHE 4-60T", "地獄鐮刀", "官方入門的平衡型代表，4 個刀刃擅長把對手撞散。"],
+            ["BX-15", "LEON CLAW 5-60P", "獅子之爪", "5 片的齒輪加上 P 軸心，攻守都兼顧。"],
+            ["BX-26", "UNICORN STING 5-60GP", "獨角獸之刺", "GP 是 Gear Point 軸心，是很受歡迎的平衡型。"],
+          ],
+        },
+      ];
+
+      // 自製插圖：上面是俯視的刃，下面是側面的軸心
+      function bladePath(kind, cx, cy, r) {
+        const pts = [];
+        const N = 360;
+        for (let i = 0; i < N; i++) {
+          const a = (i / N) * Math.PI * 2;
+          let rr = r;
+          if (kind === "attack") { const k = (a * 3 / (Math.PI * 2)) % 1; rr = r * (0.58 + 0.42 * Math.pow(1 - k, 1.6)); }
+          if (kind === "defense") rr = r * (0.9 + 0.08 * Math.cos(a * 6));
+          if (kind === "stamina") rr = r * (0.94 + 0.06 * Math.cos(a * 2));
+          if (kind === "balance") { const k = (a * 4 / (Math.PI * 2)) % 1; rr = r * (0.8 + 0.2 * Math.max(0, 1 - Math.abs(k - 0.3) * 3)); }
+          pts.push(`${(cx + Math.cos(a) * rr).toFixed(1)},${(cy + Math.sin(a) * rr).toFixed(1)}`);
+        }
+        return `M${pts.join("L")}Z`;
+      }
+
+      function bitPath(kind, x, y) {
+        if (kind === "attack") return `M${x - 26} ${y} L${x + 26} ${y} L${x + 22} ${y + 34} L${x - 22} ${y + 34} Z`;
+        if (kind === "defense") return `M${x - 24} ${y} L${x + 24} ${y} L${x + 2} ${y + 46} L${x - 2} ${y + 46} Z`;
+        if (kind === "stamina") return `M${x - 24} ${y} L${x + 24} ${y} L${x + 24} ${y + 14} A24 24 0 0 1 ${x - 24} ${y + 14} Z`;
+        return `M${x - 26} ${y} L${x + 26} ${y} L${x + 9} ${y + 40} L${x - 9} ${y + 40} Z`;
+      }
+
+      function art(t, small) {
+        const top = `
+          <g>
+            <circle cx="150" cy="104" r="92" fill="${t.color}" opacity=".12"/>
+            <path d="${bladePath(t.cls, 150, 104, 84)}" fill="${t.color}" stroke="${t.dark}" stroke-width="3"/>
+            ${t.cls === "defense" ? [0, 1, 2, 3, 4, 5].map((i) => `<circle cx="${150 + Math.cos(i * Math.PI / 3) * 62}" cy="${104 + Math.sin(i * Math.PI / 3) * 62}" r="10" fill="${t.dark}" opacity=".5"/>`).join("") : ""}
+            ${t.cls === "stamina" ? `<circle cx="150" cy="104" r="72" fill="none" stroke="${t.dark}" stroke-width="10" opacity=".45"/>` : ""}
+            ${t.cls === "attack" ? [0, 1, 2].map((i) => `<path d="M150 104 L${150 + Math.cos(i * 2.094) * 80} ${104 + Math.sin(i * 2.094) * 80}" stroke="#fff" stroke-width="3" opacity=".6"/>`).join("") : ""}
+            <circle cx="150" cy="104" r="30" fill="#f1f4fa" stroke="${t.dark}" stroke-width="3"/>
+            <text x="150" y="114" text-anchor="middle" font-size="28">${t.emoji}</text>
+          </g>`;
+        if (small) return `<svg viewBox="50 4 200 200" class="mini" aria-hidden="true">${top}</svg>`;
+        return `<svg viewBox="0 0 300 330" role="img" aria-label="${t.name}的示意插圖：上面是從上面看的刃，下面是從側面看的軸心">
+          ${top}
+          <g transform="translate(0 214)">
+            <ellipse cx="150" cy="16" rx="110" ry="16" fill="${t.color}"/>
+            <rect x="96" y="28" width="108" height="16" rx="5" fill="#9aa5b8"/>
+            <path d="${bitPath(t.cls, 150, 44)}" fill="#1e6fd9" stroke="#1559b3" stroke-width="2"/>
+            <line x1="40" y1="${t.cls === "defense" ? 92 : t.cls === "balance" ? 86 : t.cls === "stamina" ? 82 : 80}" x2="260" y2="${t.cls === "defense" ? 92 : t.cls === "balance" ? 86 : t.cls === "stamina" ? 82 : 80}" stroke="#c8d2e3" stroke-width="3"/>
+            <text x="262" y="66" font-size="13" font-weight="900" fill="#1559b3" text-anchor="end" font-family="Noto Sans TC, sans-serif">軸心</text>
+          </g>
+          <text x="150" y="208" text-anchor="middle" font-size="13" fill="#5f6470" font-family="Noto Sans TC, sans-serif">↑ 從上面看　　↓ 從側面看</text>
+        </svg>`;
+      }
+
+      document.getElementById("types").innerHTML = TYPES.map((t) => `
+        <section class="type-sec" id="${t.id}">
+          <div class="type-head bg-${t.cls}">
+            <span style="font-size:40px;line-height:1">${t.emoji}</span>
+            <h2>${t.name}</h2>
+            <span class="say">「${t.say}」</span>
+          </div>
+          <div class="type-body">
+            <div class="card art">
+              ${art(t)}
+              <p>示意插圖・不是產品外觀</p>
+            </div>
+            <div>
+              <p style="margin-top:0;font-size:20px">${t.intro}</p>
+              <ul class="facts">${t.facts.map(([i, s]) => `<li><span class="i">${i}</span>${s}</li>`).join("")}</ul>
+              <div class="meter">${t.meter.map(([k, v]) => `<span>${k}</span><span class="bar"><i style="width:${v}%;background:${t.color}"></i></span>`).join("")}</div>
+              <p style="font-size:14px;color:var(--muted);margin:4px 0 0">能力條是幫助理解的大概印象，不是官方數據。</p>
+            </div>
+          </div>
+          <div class="pc">
+            <div class="card" style="background:var(--green-soft);border-color:var(--green)"><b>👍 優點</b><ul>${t.good.map((s) => `<li>${s}</li>`).join("")}</ul></div>
+            <div class="card" style="background:var(--red-soft);border-color:var(--red)"><b>👎 缺點</b><ul>${t.bad.map((s) => `<li>${s}</li>`).join("")}</ul></div>
+          </div>
+          <h3 style="margin-top:20px">🌀 代表陀螺</h3>
+          <div class="examples">${t.examples.map(([code, en, zh, d]) => `
+            <div class="card ex t-${t.cls}" style="background:#fff;border-width:3px">
+              <span class="code">${code}</span>
+              ${art(t, true)}
+              <b>${en}</b>
+              <span class="combo">中文意思：${zh}</span>
+              <p>${d}</p>
+            </div>`).join("")}
+          </div>
+          <h3 style="margin-top:20px">🎬 看它怎麼跑</h3>
+          <div class="card video type-demo" data-demo="${t.demo}"></div>
+        </section>`).join("");
+    })();
+  </script>
+  <script src="demo.js"></script>
 </body>
 </html>
