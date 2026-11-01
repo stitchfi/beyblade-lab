@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>購物清單｜陀螺實驗室</title>
+  <meta name="description" content="6–7 歲戰鬥陀螺入門購物清單，依用途分類，只列型號方便比價">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌀</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .item { margin-bottom: 12px; }
+    .item h3 { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; }
+    .item .code { background: var(--blue-soft); color: var(--blue); font-weight: 900; padding: 0 10px; border-radius: 8px; font-size: 16px; }
+    .item p { margin: 4px 0; }
+    .links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+    .links a { font-size: 15px; padding: 2px 12px; border: 2px solid var(--blue); border-radius: 999px; text-decoration: none; font-weight: 700; }
+    .must { background: var(--red); color: #fff; font-size: 14px; padding: 0 10px; border-radius: 999px; }
+  </style>
+</head>
+<body data-page="shop">
+  <header class="top" id="top"></header>
+  <main class="wrap">
+    <div class="lesson-top">
+      <span class="emoji">🛒</span>
+      <div>
+        <h1>購物清單</h1>
+        <p class="lead" style="margin:0">給大人看的入門清單。依用途分類，只列型號，價格各通路常變動，請用型號比價。</p>
+      </div>
+    </div>
+
+    <div class="note red">
+      <b>⚠️ 買之前先看</b>
+      <ul>
+        <li>認明 <b>Takara Tomy</b> 正版的 <b>Beyblade X</b> 系列，型號開頭是「BX-」或「UX-」。</li>
+        <li>舊的 Burst 系列不能和 Beyblade X 混用；Hasbro（孩之寶）版本的零件也可能不相容。</li>
+        <li>「Booster 補充包」<b>沒有附發射器</b>，第一次買一定要選「Starter 入門包」或套組。</li>
+        <li>陀螺推出很快，舊型號可能停售，以店家現貨為準。</li>
+      </ul>
+    </div>
+
+    <div id="shop"></div>
+
+    <div class="section">
+      <h2><span class="n">💰</span>建議組合</h2>
+      <div class="grid">
+        <div class="card"><h3>🧒 一個人玩</h3><p style="margin:0">對戰盤 BX-10 ＋ 入門包 1 盒 ＋ 想換的軸心再加 1 顆 Booster</p></div>
+        <div class="card" style="border-color:var(--yellow)"><h3>👫 兩個人對戰 ⭐</h3><p style="margin:0">對戰盤 BX-10 ＋ <b>不同類型</b>的入門包 2 盒（例如攻擊型 BX-01 ＋ 防禦型 BX-04）</p></div>
+        <div class="card"><h3>🔬 小小研究員</h3><p style="margin:0">兩人組合 ＋ 持久型 BX-03 ＋ 平衡型 BX-02 ＋ 握把 BX-11 ＋ 收納盒，四種類型都能比較</p></div>
+      </div>
+    </div>
+
+    <nav class="pager" id="pager"></nav>
+  </main>
+  <footer></footer>
+  <script src="site.js"></script>
+  <script>
+    (function () {
+      const SHOP = [
+        {
+          title: "🏟️ 對戰必備",
+          items: [
+            { name: "極限對戰盤 XTREME STADIUM", code: "BX-10", must: true, why: "有 X 衝刺軌道和得分出口，在家對戰一定要有。" },
+            { name: "開戰組合 START DASH SET", code: "BX-07", why: "一次買齊入門用品的套組，內容請看包裝。" },
+          ],
+        },
+        {
+          title: "⚔️ 第一顆陀螺（入門包，有附發射器）",
+          note: "四顆是官方入門指南介紹的代表陀螺，各是一種類型。到「陀螺類型」頁看它們的特色。",
+          items: [
+            { name: "蒼龍之劍 DRAN SWORD 3-60F", code: "BX-01", type: ["攻擊型", "t-attack"], why: "會衝刺撞擊，最有刺激感。" },
+            { name: "地獄鐮刀 HELLS SCYTHE 4-60T", code: "BX-02", type: ["平衡型", "t-balance"], why: "攻守兼具，不知道選哪顆時的好選擇。" },
+            { name: "巫師之箭 WIZARD ARROW 4-80B", code: "BX-03", type: ["持久型", "t-stamina"], why: "轉得久，很適合做「誰轉最久」的實驗。" },
+            { name: "騎士之盾 KNIGHT SHIELD 3-80N", code: "BX-04", type: ["防禦型", "t-defense"], why: "站在中間不容易被撞走，力氣小也有機會贏。" },
+          ],
+        },
+        {
+          title: "✊ 讓發射更容易",
+          items: [
+            { name: "發射器握把 LAUNCHER GRIP", code: "BX-11", why: "裝在發射器上，小手比較好握、好施力。6–7 歲推薦。" },
+            { name: "繩式發射器 STRING LAUNCHER", code: "BX-18", why: "轉速可以更高，但比較需要力氣，玩熟了再考慮。" },
+          ],
+        },
+        {
+          title: "📦 收納和安全",
+          items: [
+            { name: "分格零件收納盒", code: "", why: "陀螺會拆成 3 個小零件，分格放才不會弄丟。一般文具店、生活百貨就有。" },
+            { name: "地墊或桌墊", code: "", why: "鋪在對戰盤下面，減少噪音，陀螺飛出來也不會刮傷地板。" },
+          ],
+        },
+      ];
+
+      function links(q) {
+        const k = encodeURIComponent(q);
+        return `<div class="links">
+          <a href="https://shopee.tw/search?keyword=${k}" target="_blank" rel="noopener">蝦皮</a>
+          <a href="https://www.momoshop.com.tw/search/searchShop.jsp?keyword=${k}" target="_blank" rel="noopener">momo</a>
+          <a href="https://24h.pchome.com.tw/search/?q=${k}" target="_blank" rel="noopener">PChome</a>
+        </div>`;
+      }
+
+      document.getElementById("shop").innerHTML = SHOP.map((g, gi) => `
+        <div class="section">
+          <h2><span class="n">${gi + 1}</span>${g.title}</h2>
+          ${g.note ? `<p>${g.note}</p>` : ""}
+          ${g.items.map((it) => `
+            <div class="card item">
+              <h3>${it.name}${it.code ? `<span class="code">${it.code}</span>` : ""}${it.type ? `<span class="tag ${it.type[1]}">${it.type[0]}</span>` : ""}${it.must ? `<span class="must">必買</span>` : ""}</h3>
+              <p>${it.why}</p>
+              ${it.code ? links(`Beyblade X ${it.code}`) : ""}
+            </div>`).join("")}
+        </div>`).join("");
+    })();
+  </script>
+</body>
+</html>

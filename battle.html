@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>戰鬥規則區｜陀螺實驗室</title>
+  <meta name="description" content="Beyblade X 的比賽規則：4 種終結方式和得分、先拿 4 分獲勝，還有動畫示範和家用計分板">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌀</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .finish-grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+    .finish { text-align: center; }
+    .finish .pt { font-size: 40px; font-weight: 900; line-height: 1.2; }
+    .finish .emoji { font-size: 34px; display: block; }
+    .finish p { margin: 4px 0 0; font-size: 16px; }
+  </style>
+</head>
+<body data-page="battle">
+  <header class="top" id="top"></header>
+  <main class="wrap">
+    <div class="lesson-top">
+      <span class="emoji">🏆</span>
+      <div>
+        <h1>戰鬥規則區</h1>
+        <p class="lead" style="margin:0">兩個人同時發射，用 4 種方式得分，<b>先拿到 4 分的人獲勝！</b></p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2><span class="n">1</span>準備</h2>
+      <div class="card">
+        <ul class="materials">
+          <li>2 位玩家，每人 1 顆陀螺和 1 支發射器</li>
+          <li>1 個極限對戰盤（Xtreme Stadium）</li>
+          <li>1 位裁判（請大人當，負責喊口令和判斷誰得分）</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2><span class="n">2</span>認識對戰盤</h2>
+      <div class="grid two" style="align-items:center">
+        <div class="card" style="text-align:center">
+          <svg viewBox="0 0 320 320" role="img" aria-label="對戰盤俯視示意圖：外圈是 X 衝刺軌道，上方是 Xtreme 區，左右下方是兩個 Over 區">
+            <circle cx="160" cy="160" r="150" fill="#1b3566"/>
+            <circle cx="160" cy="160" r="122" fill="none" stroke="#8cc8ff" stroke-width="10" stroke-dasharray="3 4" opacity=".7"/>
+            <circle cx="160" cy="160" r="150" fill="none" stroke="#d9e4f5" stroke-width="8"/>
+            <path d="M126 14 A150 150 0 0 1 194 14" stroke="#ff4d6d" stroke-width="16" fill="none"/>
+            <path d="M28 229 A150 150 0 0 0 64 274" stroke="#ffb703" stroke-width="16" fill="none" transform="rotate(-8 160 160)"/>
+            <path d="M256 274 A150 150 0 0 0 292 229" stroke="#ffb703" stroke-width="16" fill="none" transform="rotate(8 160 160)"/>
+            <g font-family="Noto Sans TC, sans-serif" font-weight="900" text-anchor="middle">
+              <text x="160" y="52" fill="#ff4d6d" font-size="16">Xtreme 區（3 分）</text>
+              <text x="82" y="232" fill="#ffb703" font-size="14">Over 區</text>
+              <text x="238" y="232" fill="#ffb703" font-size="14">Over 區</text>
+              <text x="160" y="150" fill="#8cc8ff" font-size="14">外圈 = X 衝刺軌道</text>
+              <text x="160" y="172" fill="#ffffff" font-size="13">（陀螺咬住會加速）</text>
+            </g>
+          </svg>
+          <p style="margin:0;font-size:15px;color:var(--muted)">示意圖・出口位置以實際對戰盤為準</p>
+        </div>
+        <div>
+          <div class="card" style="margin-bottom:12px"><h3>⚙️ X 衝刺軌道</h3><p style="margin:0">盤子外圈有一圈齒條，陀螺的軸心咬住它，就會突然<b>超加速</b>。</p></div>
+          <div class="card" style="margin-bottom:12px"><h3>🟡 Over 區</h3><p style="margin:0">盤邊的出口。對手的陀螺被撞進這裡，你得 <b>2 分</b>。</p></div>
+          <div class="card"><h3>🔴 Xtreme 區</h3><p style="margin:0">最特別的出口。對手被撞進這裡，你得 <b>3 分</b>！</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2><span class="n">3</span>4 種得分方式</h2>
+      <div class="finish-grid">
+        <div class="card finish"><span class="emoji">🏁</span><b>旋轉終結</b><div class="pt" style="color:var(--blue)">1 分</div><p>比對手<b>轉得久</b>。</p></div>
+        <div class="card finish"><span class="emoji">💥</span><b>出場終結</b><div class="pt" style="color:#c48f00">2 分</div><p>把對手撞進 <b>Over 區</b>。</p></div>
+        <div class="card finish"><span class="emoji">💣</span><b>爆裂終結</b><div class="pt" style="color:#c48f00">2 分</div><p>把對手的陀螺<b>撞散</b>。</p></div>
+        <div class="card finish"><span class="emoji">⚡</span><b>極限終結</b><div class="pt" style="color:var(--red)">3 分</div><p>把對手撞進 <b>Xtreme 區</b>。</p></div>
+      </div>
+      <p>看動畫，認識每一種贏法：</p>
+      <div class="videos">
+        <div class="card video" data-demo="spinFinish"></div>
+        <div class="card video" data-demo="overFinish"></div>
+        <div class="card video" data-demo="burstFinish"></div>
+        <div class="card video" data-demo="xtremeFinish"></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2><span class="n">4</span>比賽流程</h2>
+      <ol class="steps">
+        <li><div class="step"><span class="num">1.</span><span>兩人站在對戰盤兩邊，把陀螺裝上發射器。</span></div></li>
+        <li><div class="step"><span class="num">2.</span><span>一起喊「<b>3、2、1，Go Shoot！</b>」，在「Shoot」的時候<b>同時</b>發射。</span></div></li>
+        <li><div class="step"><span class="num">3.</span><span>手不能碰盤子和陀螺，等到分出勝負。</span></div></li>
+        <li><div class="step"><span class="num">4.</span><span>裁判宣布是哪一種終結、誰得幾分。</span></div></li>
+        <li><div class="step"><span class="num">5.</span><span>重複比賽，<b>先拿到 4 分的人獲勝</b>！</span></div></li>
+      </ol>
+      <div class="note">
+        <b>🤝 同時發生怎麼辦？</b><br>
+        如果裁判看到兩種結果<b>同一瞬間</b>發生（例如兩顆同時停下），這一回合算平手，重新比一次。
+      </div>
+    </div>
+
+    <div class="section">
+      <h2><span class="n">5</span>家用計分板</h2>
+      <p>在家比賽時，可以用這個計分板。名字可以點一下修改。</p>
+      <div class="card">
+        <div class="score">
+          <div class="card player" id="p0">
+            <input value="玩家 A" aria-label="玩家 A 名字">
+            <div class="pts">0</div>
+            <button class="btn" data-add="1" type="button">🏁 旋轉 +1</button>
+            <button class="btn" data-add="2" type="button">💥 出場 +2</button>
+            <button class="btn" data-add="2" type="button">💣 爆裂 +2</button>
+            <button class="btn" data-add="3" type="button">⚡ 極限 +3</button>
+          </div>
+          <div class="card player" id="p1">
+            <input value="玩家 B" aria-label="玩家 B 名字">
+            <div class="pts">0</div>
+            <button class="btn" data-add="1" type="button">🏁 旋轉 +1</button>
+            <button class="btn" data-add="2" type="button">💥 出場 +2</button>
+            <button class="btn" data-add="2" type="button">💣 爆裂 +2</button>
+            <button class="btn" data-add="3" type="button">⚡ 極限 +3</button>
+          </div>
+        </div>
+        <p class="winner" id="winner"></p>
+        <div class="btn-row" style="justify-content:center;margin-top:8px">
+          <button class="btn" id="undo" type="button">↩ 上一步</button>
+          <button class="btn primary" id="reset" type="button">🔄 重新開始</button>
+          <label style="font-size:16px">獲勝分數
+            <select id="target" style="font:inherit;font-size:16px">
+              <option>3</option><option selected>4</option><option>5</option><option>7</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <p style="font-size:16px;color:var(--muted)">官方比賽的規則以 4 分為準；在家可以自己決定，比賽前先說好就好。</p>
+    </div>
+
+    <div class="section">
+      <h2><span class="n">6</span>安全和禮貌</h2>
+      <div class="grid">
+        <div class="note red" style="margin:0">
+          <b>🦺 安全</b>
+          <ul>
+            <li>發射器只能對著對戰盤，不可以對著人。</li>
+            <li>臉不要靠近盤子，零件可能會彈出來。</li>
+            <li>陀螺還在轉的時候，手不要伸進去拿。</li>
+          </ul>
+        </div>
+        <div class="note" style="margin:0">
+          <b>😊 禮貌</b>
+          <ul>
+            <li>比賽前說「請多指教」，比賽後說「謝謝」。</li>
+            <li>贏了不嘲笑，輸了也幫對手拍拍手。</li>
+            <li>對裁判的判定有疑問，好好說，不生氣。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <nav class="pager" id="pager"></nav>
+  </main>
+  <footer></footer>
+  <script src="site.js"></script>
+  <script src="demo.js"></script>
+  <script>
+    (function () {
+      const pts = [0, 0];
+      const history = [];
+      const target = document.getElementById("target");
+      const players = [document.getElementById("p0"), document.getElementById("p1")];
+
+      function render() {
+        const goal = Number(target.value);
+        const won = pts.findIndex((p) => p >= goal);
+        players.forEach((el, i) => {
+          el.querySelector(".pts").textContent = pts[i];
+          el.classList.toggle("win", won === i);
+          el.querySelectorAll("[data-add]").forEach((b) => (b.disabled = won >= 0));
+        });
+        document.getElementById("winner").textContent =
+          won >= 0 ? `🎉 ${players[won].querySelector("input").value} 獲勝！` : `先拿到 ${goal} 分的人獲勝`;
+      }
+
+      players.forEach((el, i) => {
+        el.querySelectorAll("[data-add]").forEach((b) => {
+          b.onclick = () => {
+            const n = Number(b.dataset.add);
+            pts[i] += n;
+            history.push([i, n]);
+            render();
+          };
+        });
+        el.querySelector("input").oninput = render;
+      });
+      document.getElementById("undo").onclick = () => {
+        const h = history.pop();
+        if (h) pts[h[0]] -= h[1];
+        render();
+      };
+      document.getElementById("reset").onclick = () => {
+        pts[0] = pts[1] = 0;
+        history.length = 0;
+        render();
+      };
+      target.onchange = render;
+      render();
+    })();
+  </script>
+</body>
+</html>

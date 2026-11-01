@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>零件區｜陀螺實驗室</title>
+  <meta name="description" content="戰鬥陀螺的 3 個零件：刃、齒輪、軸心，以及怎麼看懂陀螺的名字">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌀</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="parts">
+  <header class="top" id="top"></header>
+  <main class="wrap">
+    <div class="lesson-top">
+      <span class="emoji">🧩</span>
+      <div>
+        <h1>零件區</h1>
+        <p class="lead" style="margin:0">一顆陀螺有 3 層，換掉其中一層，陀螺的個性就會改變。</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2><span class="n">1</span>陀螺的 3 層構造</h2>
+      <div class="grid two" style="align-items:center">
+        <div class="card" style="text-align:center">
+          <svg viewBox="0 0 300 300" role="img" aria-label="陀螺分解圖：上面是刃，中間是齒輪，下面是軸心">
+            <!-- 刃 -->
+            <g transform="translate(150 70)">
+              <ellipse cx="0" cy="0" rx="120" ry="34" fill="#e63946"/>
+              <path d="M-120 0 L-150 -14 L-96 -26 Z M120 0 L150 14 L96 26 Z M-20 -34 L10 -48 L40 -30 Z" fill="#b71d2a"/>
+              <ellipse cx="0" cy="-4" rx="40" ry="13" fill="#f1f4fa" stroke="#b71d2a" stroke-width="3"/>
+            </g>
+            <!-- 齒輪 -->
+            <g transform="translate(150 160)">
+              <ellipse cx="0" cy="0" rx="70" ry="20" fill="#f4b400"/>
+              <path d="M-70 0 L-84 -8 L-60 -14 Z M70 0 L84 8 L60 14 Z M0 -20 L14 -28 L22 -18 Z" fill="#c48f00"/>
+              <ellipse cx="0" cy="-2" rx="24" ry="7" fill="#fff6d6"/>
+            </g>
+            <!-- 軸心 -->
+            <g transform="translate(150 235)">
+              <ellipse cx="0" cy="0" rx="30" ry="10" fill="#1e6fd9"/>
+              <path d="M-22 4 L22 4 L6 46 L-6 46 Z" fill="#1559b3"/>
+            </g>
+            <g stroke="#9aa5b8" stroke-width="2" stroke-dasharray="5 5">
+              <line x1="150" y1="108" x2="150" y2="138"/>
+              <line x1="150" y1="182" x2="150" y2="222"/>
+            </g>
+            <g font-family="Noto Sans TC, sans-serif" font-weight="900" font-size="18">
+              <text x="12" y="125" fill="#d62828">① 刃</text>
+              <text x="12" y="200" fill="#9a6b00">② 齒輪</text>
+              <text x="200" y="270" fill="#1e6fd9">③ 軸心</text>
+            </g>
+          </svg>
+          <p style="margin:0;font-size:15px;color:var(--muted)">示意圖・實際形狀每顆都不一樣</p>
+        </div>
+        <div>
+          <div class="card" style="margin-bottom:12px">
+            <h3>🗡️ ① 刃（Blade）</h3>
+            <p style="margin:0">最上面、最大塊的部分，<b>直接撞到對手</b>。形狀和重量不同，撞擊的效果就不同。</p>
+          </div>
+          <div class="card" style="margin-bottom:12px">
+            <h3>⚙️ ② 齒輪（Ratchet）</h3>
+            <p style="margin:0">中間層，決定陀螺的<b>高度</b>和<b>重心</b>，也會影響撞到對手時的反應。</p>
+          </div>
+          <div class="card">
+            <h3>📍 ③ 軸心（Bit）</h3>
+            <p style="margin:0">最下面的尖端，決定陀螺<b>怎麼跑</b>：會不會衝刺、轉不轉得久。<b>陀螺是哪一種類型，主要看軸心！</b></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2><span class="n">2</span>看懂陀螺的名字</h2>
+      <div class="card" style="text-align:center">
+        <p style="font-size:30px;font-weight:900;margin:4px 0;letter-spacing:2px">
+          <span style="background:var(--red-soft);padding:0 8px;border-radius:8px">蒼龍之劍</span>
+          <span style="background:var(--yellow-soft);padding:0 8px;border-radius:8px">3-60</span>
+          <span style="background:var(--blue-soft);padding:0 8px;border-radius:8px">F</span>
+        </p>
+        <p style="margin:0">（英文名稱是 DRAN SWORD 3-60F）</p>
+      </div>
+      <div class="scroll" style="margin-top:14px">
+        <table class="table">
+          <tr><th>名字的部分</th><th>代表</th><th>例子</th></tr>
+          <tr><td><b>蒼龍之劍</b></td><td>① 刃的名字</td><td>DRAN SWORD、KNIGHT SHIELD……</td></tr>
+          <tr><td><b>3</b>-60</td><td>② 齒輪有幾片突起</td><td>3 片、4 片、5 片……</td></tr>
+          <tr><td>3-<b>60</b></td><td>② 齒輪的高度（60 ＝ 6.0 mm）</td><td>60 比較矮、80 比較高</td></tr>
+          <tr><td><b>F</b></td><td>③ 軸心的種類</td><td>F、T、B、N……（看下面）</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2><span class="n">3</span>常見的軸心</h2>
+      <p>軸心最容易看出差別。下面是入門陀螺最常見的 4 種，到 <a href="launch.html">🎬 發射與轉法</a> 可以看它們動起來的樣子！</p>
+      <div class="scroll">
+        <table class="table">
+          <tr><th class="c">代號</th><th>名稱</th><th>形狀</th><th>會怎麼動</th><th>類型</th></tr>
+          <tr><td class="big-letter">F</td><td>平底<br>Flat</td><td>底部平平的</td><td>容易咬住盤邊的齒條，觸發 <b>X 衝刺</b>，到處衝撞</td><td><span class="tag t-attack">攻擊型</span></td></tr>
+          <tr><td class="big-letter">T</td><td>錐形<br>Taper</td><td>往下變細</td><td>前半場有攻擊力，後半場比較持久</td><td><span class="tag t-balance">平衡型</span></td></tr>
+          <tr><td class="big-letter">B</td><td>球形<br>Ball</td><td>圓圓的</td><td>移動剛剛好，可以閃開攻擊，<b>轉很久</b></td><td><span class="tag t-stamina">持久型</span></td></tr>
+          <tr><td class="big-letter">N</td><td>針狀<br>Needle</td><td>尖尖的</td><td>站在中間，傾斜時反擊力變強，不容易被撞走</td><td><span class="tag t-defense">防禦型</span></td></tr>
+        </table>
+      </div>
+      <p style="font-size:16px;color:var(--muted)">還有 P、HN、S 等很多種軸心，每一種的特性請看包裝上的說明。</p>
+    </div>
+
+    <div class="section">
+      <h2><span class="n">4</span>齒輪：突起多少、高或矮</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>🔺 3 片突起</h3>
+          <p style="margin:0">把對手<b>彈開</b>的力量比較強。</p>
+        </div>
+        <div class="card">
+          <h3>🔷 4 片突起</h3>
+          <p style="margin:0">比較容易<b>閃開</b>對手的攻擊。</p>
+        </div>
+        <div class="card">
+          <h3>⬇️ 60（矮）／⬆️ 80（高）</h3>
+          <p style="margin:0">齒輪越矮，整顆陀螺就越低；越高，陀螺就越高。高度不同，撞到對手的位置也不同。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2><span class="n">5</span>四顆入門陀螺的刃</h2>
+      <div class="grid">
+        <div class="card"><span class="tag t-attack">攻擊型</span><h3 style="margin-top:6px">蒼龍之劍 DRAN SWORD</h3><p style="margin:0">有 3 個往上挑的刀刃，擅長把對手<b>往斜上方撞飛</b>。</p></div>
+        <div class="card"><span class="tag t-balance">平衡型</span><h3 style="margin-top:6px">地獄鐮刀 HELLS SCYTHE</h3><p style="margin:0">有 4 個刀刃，擅長把對手<b>撞散（爆裂）</b>。</p></div>
+        <div class="card"><span class="tag t-stamina">持久型</span><h3 style="margin-top:6px">巫師之箭 WIZARD ARROW</h3><p style="margin:0">重量放在外圈，有兩個大圓刃，轉起來的<b>離心力很強</b>。</p></div>
+        <div class="card"><span class="tag t-defense">防禦型</span><h3 style="margin-top:6px">騎士之盾 KNIGHT SHIELD</h3><p style="margin:0">有 6 片護甲，像避震器一樣<b>吸收撞擊</b>。</p></div>
+      </div>
+      <p style="font-size:16px;color:var(--muted)">中文名稱各通路的翻譯可能不同，買的時候用英文名稱或型號比對最準。</p>
+    </div>
+
+    <div class="note">
+      <b>💡 動動腦</b><br>
+      如果把蒼龍之劍的 F 軸心換成騎士之盾的 N 軸心，它會比較像攻擊型，還是防禦型？到 <a href="worksheet.html">📝 實驗學習單</a> 動手試試看！
+    </div>
+
+    <nav class="pager" id="pager"></nav>
+  </main>
+  <footer></footer>
+  <script src="site.js"></script>
+</body>
+</html>
